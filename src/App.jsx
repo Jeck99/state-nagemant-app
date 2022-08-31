@@ -1,28 +1,18 @@
 import { useReducer } from "react";
 import "./App.css";
-import Home from "./components/pages/Home/Home";
+import { UP_ACTION } from "./store/actions/counter-actions";
+import counterReducer from "./store/reducers/counter-reducer";
 
-let initialState = 0; //סטייט התחלתי
+export let initialState = 0; //סטייט התחלתי
 
-const reducer = (state, action) => {
-  //פונקציית רדוסר עם מנגנון סוויצ' קייס
-  switch (
-    action.type // התייחסות לטייפ בתוך אובייקט האקשן
-  ) {
-    case "UP": // מקרה של קידום הסטייט ב 1 אם הטייפ שווה לאפ
-      return state + 1;
-    default:
-      return state;
-  }
-};
 function App() {
   // יצירה של סטייט ופונקציית דיספאטצ' בעזרת יוס-רדוסר
-  const [myState, dispatch] = useReducer(reducer, initialState);
+  const [myState, dispatch] = useReducer(counterReducer, initialState);
   return (
     <div className="App">
      {myState} {/*הצגת הסטייט במסך */}
      {/*קריאה לפונקציית הדיספאטצ' המשגרת אובייקט אקשן, עם שדה של טייפ */}
-      <button onClick={() => dispatch({ type: "UP" })}>up</button>
+      <button onClick={() => dispatch(UP_ACTION)}>up</button>
     </div>
   );
 }
