@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import "./App.css";
-import { UP_ACTION } from "./store/actions/counter-actions";
+import { counterDownAction, counterResetAction, counterUpAction, updateCounterAction } from "./store/actions/counter-actions";
 import counterReducer from "./store/reducers/counter-reducer";
 
 export let initialState = 0; //סטייט התחלתי
@@ -12,7 +12,10 @@ function App() {
     <div className="App">
      {myState} {/*הצגת הסטייט במסך */}
      {/*קריאה לפונקציית הדיספאטצ' המשגרת אובייקט אקשן, עם שדה של טייפ */}
-      <button onClick={() => dispatch(UP_ACTION)}>up</button>
+      <button onClick={() => dispatch(counterUpAction())}>up</button>
+      <button onClick={() => dispatch(counterDownAction())}>down</button>
+      <button onClick={() => dispatch(counterResetAction())}>reset</button>
+      <button onClick={() => dispatch(updateCounterAction(7))}>update</button>
     </div>
   );
 }
