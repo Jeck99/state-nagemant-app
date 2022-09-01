@@ -5,7 +5,7 @@ export default function counterReducer(state, action) {
   action.type // התייחסות לטייפ בתוך אובייקט האקשן
   ) {
     case UP_COUNTER: // מקרה של קידום הסטייט ב 1 אם הטייפ שווה לאפ
-      return state + 1;
+      return +state + 1;
     case DOWN_COUNTER: // מקרה של חיסור הסטייט ב 1 
       return state - 1;
     case RESET_COUNTER: //מקרה של איפוס הסטייט 
