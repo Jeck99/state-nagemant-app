@@ -2,7 +2,7 @@ import { useReducer } from "react";
 import "./App.css";
 import { counterDownAction, counterResetAction, counterUpAction, updateCounterAction } from "./store/actions/counter-actions";
 import counterReducer from "./store/reducers/counter-reducer";
-
+cjggfyf,fcyfhucy,yugfyfcm h
 export let initialState = 0; //סטייט התחלתי
 
 function App() {
