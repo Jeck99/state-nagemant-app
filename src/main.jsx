@@ -5,12 +5,12 @@ import './index.css'
 
 import {createStore,compose}  from 'redux'
 import { Provider } from 'react-redux'
-import userReducer from './store/reducers/user-reducer'
+import usersReducer from './store/reducers/users-reducer'
 const enhancers = compose(
   window.__REDUX_DEVTOOLS_EXTENSION__ &&
  window.__REDUX_DEVTOOLS_EXTENSION__()
   );
-const usersStore = createStore(userReducer,{user:{fName:"yaso"}},enhancers)
+const usersStore = createStore(usersReducer,{users:[]},enhancers)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={usersStore}>
