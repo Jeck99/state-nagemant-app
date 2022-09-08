@@ -5,20 +5,21 @@ export default function usersReducer({ users }, action) {
         case GET_BY_ID:
             return [...users]
         case ADD_USER:
-            return [...users, action.payload]
+            return {users:[...users, action.payload]}
         case UPDATE_USER:
             let newArray = users.filter((userItem) => {
                 userItem.Id == action.payload.Id
             })
             users[users.indexOf(newArray[0])] = action.payload
-            return [...users]
+            return {users:[...users]}
         case DELETE_USER:
-            newArray = users.filter((userItem) => {
+            let newUsersArray = users.filter((userItem) => {
                 userItem.Id !== action.payload
             })
-            return [...newArray]
+            return {users:[...newUsersArray]}
+        // return newUsersArray
         default:
-            return { users }
+            return {users}
     }
 
 }
