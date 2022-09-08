@@ -1,22 +1,19 @@
 import "./Home.css";
 import { connect } from "react-redux";
-import {createUserAction} from "../../../store/actions/user-actions"
+import AddForm from "../../features/Add-Form/Add-Form";
+import UpdateForm from "../../features/Update-Form";
 const mapStateToProps = (state) => {
-  return {user: state.user };
+  return {users: state.users };
 };
-const mapDispatchToProps =(dispatch)=>({
-  createUser : (newUser)=> dispatch(createUserAction(newUser))
-})
-function Home(props) {
-  const changeUser = ()=>{
-    props.createUser({user:{fName:"Jacob"}})
-  }
+
+function Home({users}) {
+  const someUser = {...users[0]}
   return (
     <div className="home">
       <h1>Home</h1>
-      <p>{props.user.fName}</p>
-      <button onClick={changeUser}>change</button>
+      <AddForm/>
+      <UpdateForm user={someUser}/>
     </div>
   );
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);

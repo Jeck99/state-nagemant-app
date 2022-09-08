@@ -1,0 +1,13 @@
+.my-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch; 
+    font-size: x-large;
+}
+.show{
+    display: inline-block;
+}
+.hide{
+    display: none;
+}
