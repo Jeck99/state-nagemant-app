@@ -3,16 +3,17 @@ import { connect } from "react-redux";
 import AddForm from "../../features/Add-Form/Add-Form";
 import UpdateForm from "../../features/Update-Form";
 const mapStateToProps = (state) => {
-  return {users: state.users };
+  return { users: state.usersReducer };
 };
 
-function Home({users}) {
-  const someUser = {...users[0]}
+function Home({ users }) {
+  console.log(users);
+  const someUser = {};
   return (
     <div className="home">
       <h1>Home</h1>
-      <AddForm/>
-      <UpdateForm user={someUser}/>
+      <AddForm />
+      <UpdateForm user={someUser} />
     </div>
   );
 }

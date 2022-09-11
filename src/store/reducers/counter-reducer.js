@@ -1,5 +1,5 @@
 import { DOWN_COUNTER, RESET_COUNTER, UPDATE_COUNTER, UP_COUNTER } from "../actions/counter-types";
-export default function counterReducer(state, action) {
+export default function counterReducer(state=0, action) {
   //פונקציית רדוסר עם מנגנון סוויצ' קייס
   switch (
   action.type // התייחסות לטייפ בתוך אובייקט האקשן
